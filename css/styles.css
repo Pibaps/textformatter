@@ -153,6 +153,94 @@ body.dark-mode .copy-confirmation {
     background-color: #66bb6a;
 }
 
+/* Styling pour la barre de navigation */
+.navbar {
+    background-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 20px;
+}
+
+/* Centrage du contenu et suppression de la liste */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Style des éléments de navigation */
+.navbar li {
+    position: relative;
+}
+
+/* Style des liens de navigation */
+.navbar li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 1rem;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Effet survol - soulignement dynamique */
+.navbar li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007BFF; /* Couleur d'accent */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+/* Transition au survol */
+.navbar li a:hover {
+    color: #007BFF; /* Couleur d'accent au survol */
+}
+
+.navbar li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Style pour le lien actif */
+.navbar li a.active {
+    color: #007BFF; /* Couleur d'accent pour le lien actif */
+}
+
+.navbar li a.active::after {
+    transform: scaleX(1); /* Soulignement pour le lien actif */
+}
+
+/* Pour les écrans plus petits */
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: 15px;
+    }
+    .navbar li a {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+}
+
+
+body {
+    padding-top: 50px; /* Pour éviter que le contenu soit caché derrière la barre de navigation */
+}
+
 /* Responsive styling */
 @media (max-width: 600px) {
     body {

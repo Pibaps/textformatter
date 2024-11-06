@@ -21,5 +21,12 @@
         <div id="copyConfirmation" class="copy-confirmation">Text copied to clipboard!</div>
     </div>
     <script src="js/script.js"></script>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
 </body>
 </html>

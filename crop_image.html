@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modification et Recadrage d'Image</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css">
+    <link rel="stylesheet" href="css/stylescrop.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Modification et Recadrage d'Image</h1>
+        <input type="file" id="upload" accept="image/*">
+        <div class="controls">
+            <label>Luminosité</label>
+            <input type="range" id="brightness" min="0.5" max="1.5" step="0.1" value="1">
+            
+            <label>Contraste</label>
+            <input type="range" id="contrast" min="0.5" max="1.5" step="0.1" value="1">
+            
+            <label>Saturation</label>
+            <input type="range" id="saturation" min="0.5" max="1.5" step="0.1" value="1">
+        </div>
+        <div class="crop-container">
+            <div id="image"></div>
+        </div>
+        <button id="toggle-crop">Activer/Desactiver le Recadrage</button>
+        <button id="toggle-shape">Basculer en Carré</button>
+        <button id="download-crop">Télécharger</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
+    <script src="js/scriptcrop.js"></script>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
+</body>
+</html>
